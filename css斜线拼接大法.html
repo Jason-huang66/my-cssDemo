@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+</body>
+<style>
+body{
+    background: #eee;
+}
+div{
+    position: relative;
+    margin: 50px auto;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: red;
+    line-height: 120px;
+    text-indent: 5px;
+}
+div::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 0 100px, 100px 100px, 0 0);
+    background: #fff;
+    border: 1px solid #333;
+    transform: translateX(-120px);
+    animation: move 5s infinite linear;
+}
+div::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    clip-path: polygon(100px 99px, 100px 0, 1px 0, 100px 99px);
+    background:#fff;
+    border:1px solid #333;
+    transform: translateX(120px);
+    animation: move 5s infinite linear;
+}
+
+@keyframes move{
+    40%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+</style>    
+</html>
